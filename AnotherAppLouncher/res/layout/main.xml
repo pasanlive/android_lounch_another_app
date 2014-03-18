@@ -10,8 +10,12 @@
             android:text="Hello World, MainActivity"
             />
 
+    <Button android:id="@+id/launchDefault"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="Launch Main Activity of Another App"/>
+
     <Button android:id="@+id/launch"
             android:layout_width="fill_parent" android:layout_height="wrap_content"
-            android:text="Launch Another"/>
+            android:text="Launch Another Activity of Another App"/>
 </LinearLayout>
 

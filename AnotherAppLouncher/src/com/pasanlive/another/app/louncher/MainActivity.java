@@ -16,14 +16,21 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        Button launchDefaultButton = (Button) findViewById(R.id.launchDefault);
+        launchDefaultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.pasanlive.parent.app");
+                startActivity(intent);
+            }
+        });
+
         Button launchButton = (Button) findViewById(R.id.launch);
         launchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = getPackageManager().getLaunchIntentForPackage("com.pasanlive.parent.app");
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-//                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                intent.setComponent(new ComponentName("com.pasanlive.parent.app", "com.pasanlive.parent.app.SecondoryActivity"));
+                intent.setComponent(new ComponentName("com.pasanlive.parent.app", "com.pasanlive.parent.app.SecondaryActivity"));
                 intent.putExtra("name", "Pasan");
                 startActivity(intent);
             }

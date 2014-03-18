@@ -13,6 +13,7 @@ package com.pasanlive.parent.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 /**
  * User: Pasan Buddhika
@@ -24,6 +25,12 @@ public class SecondaryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.secondary);
 
+        TextView textView = (TextView) findViewById(R.id.welcomeNote);
 
+        Bundle extra = getIntent().getExtras();
+        if (extra != null) {
+            String user = extra.getString("name");
+            textView.setText("Hi " + user);
+        }
     }
 }
